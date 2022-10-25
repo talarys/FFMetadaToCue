@@ -10,4 +10,4 @@ This script has only one dependency, you need to have ffmpeg or at least ffprobe
 ```console
 python FFMetadataToCue.py target_file.m4b
 ```
-This will create a cue file in the same directory as the target file
+This will create a cue file in the same directory as the target file, the cue file name will match the targets, you dont have to edit anything it should just work.

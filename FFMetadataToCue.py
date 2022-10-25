@@ -15,6 +15,10 @@ def main():
     metadata = subprocess.run(
         ['ffprobe', '-show_chapters', sys.argv[1]], capture_output=True, text=True).stdout.split('\n')
 
+    if '[CHAPTER]' not in metadata:
+        print(f'No chapters metadata found for {sys.argv[1]}')
+        return 1
+
     cue = []
     path = Path(sys.argv[1])
     f = open(f'{path.parent}/{path.stem}.cue', 'w')
